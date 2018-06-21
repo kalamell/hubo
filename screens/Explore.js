@@ -68,24 +68,30 @@ class Explore extends Component {
                                 ข้อมูลสินค้า
                             </Text>
                             <View style={{ paddingHorizontal: 20, marginTop: 20, flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-between' }}>
-                                <Home width={width}
-                                    name="ทุเรียน"
-                                    type="ผลไม้ตามฤดูกาล"
-                                    price={82}
-                                    rating={4}
-                                />
-                                <Home width={width}
-                                    name="ทุเรียน"
-                                    type="ผลไม้ตามฤดูกาล"
-                                    price={82}
-                                    rating={5}
-                                />
-                                <Home width={width}
-                                    name="ทุเรียน"
-                                    type="ผลไม้ตามฤดูกาล"
-                                    price={82}
-                                    rating={4}
-                                />
+                                <TouchableOpacity onPress={() => this.props.navigation.navigate('Detail') }>
+                                    <Home width={width}
+                                        name="ทุเรียน"
+                                        type="ผลไม้ตามฤดูกาล"
+                                        price={82}
+                                        rating={4}
+                                    />
+                                </TouchableOpacity>
+                                <TouchableOpacity onPress={() => this.props.navigation.navigate('Detail') }>
+                                    <Home width={width}
+                                        name="ทุเรียน"
+                                        type="ผลไม้ตามฤดูกาล"
+                                        price={82}
+                                        rating={5}
+                                    />
+                                </TouchableOpacity>
+                                <TouchableOpacity onPress={() => this.props.navigation.navigate('Detail') }>
+                                    <Home width={width}
+                                        name="ทุเรียน"
+                                        type="ผลไม้ตามฤดูกาล"
+                                        price={82}
+                                        rating={4}
+                                    />
+                                </TouchableOpacity>
 
 
                             </View>

@@ -14,7 +14,7 @@ class Home extends Component {
     }
     render() {
         return (
-            <TouchableOpacity onPress={() => this.props.navigation.navigate('Detail') }>
+            
                 <View style={{ width: this.props.width / 2 - 30, height: this.props.width / 2 - 30, borderWidth: 0.5, borderColor: '#dddddd' }}>
                     <View style={{ flex: 1 }}>
                         <Image
@@ -34,7 +34,7 @@ class Home extends Component {
                         />
                     </View>
                 </View>
-            </TouchableOpacity>
+            
         );
     }
 }
