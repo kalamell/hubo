@@ -9,6 +9,7 @@ import {
     StatusBar,
     ScrollView,
     Image,
+    TouchableOpacity,
     Dimensions
 } from "react-native";
 import Icon from 'react-native-vector-icons/Ionicons'
