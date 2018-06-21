@@ -49,26 +49,7 @@ class Detail extends Component {
                             <Text style={{ fontSize: 24, fontWeight: '700', paddingHorizontal: 20 }}>
                                 ข้อมูลสินค้า
                             </Text>
-                            <View style={{ paddingHorizontal: 20, marginTop: 20, flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-between' }}>
-                                <Home width={width}
-                                    name="ทุเรียน"
-                                    type="ผลไม้ตามฤดูกาล"
-                                    price={82}
-                                    rating={4}
-                                />
-                                <Home width={width}
-                                    name="ทุเรียน"
-                                    type="ผลไม้ตามฤดูกาล"
-                                    price={82}
-                                    rating={5}
-                                />
-                                <Home width={width}
-                                    name="ทุเรียน"
-                                    type="ผลไม้ตามฤดูกาล"
-                                    price={82}
-                                    rating={4}
-                                />
-                            </View>
+                            
                         </View>
 
 
