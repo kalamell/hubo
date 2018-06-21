@@ -10,8 +10,8 @@ import {
     ScrollView,
     Image,
     TouchableOpacity,
-    ListView,
-    Dimensions
+    Dimensions,
+    ListView
 } from "react-native";
 import Icon from 'react-native-vector-icons/Ionicons'
 import Category from './components/Explore/Category'
@@ -19,41 +19,32 @@ import Home from './components/Explore/Home'
 const { height, width } = Dimensions.get('window')
 class Explore extends Component {
 
-    constructor(){
+    constructor() {
         super();
-
-        this.state={
-         dataSource: new ListView.DataSource({rowHasChanged:(r1,r2)=> r1!=r2}),
-        }   
-        
+        this.state = {
+            dataSource: new ListView.DataSource({rowHasChanged:(r1, r2) => r1 != r2}),
+        }
     }
-
-    componentDidMount(){
-         const { params } = this.props.navigation.state;
-        //fetch('http://hardeepcoder.com/laravel/easyshop/api/products/' + params.id)
-        fetch('http://www.huboffruit.com/index.php?route=api/product')
-        .then((response) => response.json())
-        .then((responseJson) =>{
-            data = responseJson.products; // here we have all products data
-            this.setState({
-                dataSource: this.state.dataSource.cloneWithRows(data)
-            })
-        })
-        .catch((error) =>{
-            console.error(error);
-        });
-        
-    }
-
-    static navigationOptions = {
-        header: null
-    }
-
     componentWillMount() {
         this.startHeaderHeight = 80
         if (Platform.OS == 'android') {
             this.startHeaderHeight = 100 + StatusBar.currentHeight
         }
+    }
+
+    componentDidMount() {
+        const { params } = this.props.navigation.state;
+        fetch('http://www.huboffruit.com/index.php?route=api/product')
+        .then((res) => res.json())
+        .then((resp) => {
+            data = resp.products;
+            this.setState({
+                dataSource: this.state.dataSource.cloneWithRows(data)
+            })
+        })
+        .catch((error) => {
+            console.error(error);
+        })
     }
 
     render() {
@@ -100,8 +91,31 @@ class Explore extends Component {
                                 ข้อมูลสินค้า
                             </Text>
                             <View style={{ paddingHorizontal: 20, marginTop: 20, flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-between' }}>
-                                
+                                <TouchableOpacity onPress={() => this.props.navigation.navigate('Detail') }>
+                                    <Home width={width}
+                                        name="ทุเรียน"
+                                        type="ผลไม้ตามฤดูกาล"
+                                        price={82}
+                                        rating={4}
+                                    />
                                 </TouchableOpacity>
+                                <TouchableOpacity onPress={() => this.props.navigation.navigate('Detail') }>
+                                    <Home width={width}
+                                        name="ทุเรียน"
+                                        type="ผลไม้ตามฤดูกาล"
+                                        price={82}
+                                        rating={5}
+                                    />
+                                </TouchableOpacity>
+                                <TouchableOpacity onPress={() => this.props.navigation.navigate('Detail') }>
+                                    <Home width={width}
+                                        name="ทุเรียน"
+                                        type="ผลไม้ตามฤดูกาล"
+                                        price={82}
+                                        rating={4}
+                                    />
+                                </TouchableOpacity>
+
                                 <ListView
                                     dataSource={this.state.dataSource}
                                     renderRow={(rowData)=>
@@ -117,6 +131,7 @@ class Explore extends Component {
 
                                     }
                                 />
+
 
                             </View>
                         </View>
