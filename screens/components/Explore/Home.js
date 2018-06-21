@@ -8,9 +8,13 @@ import {
 } from "react-native";
 import StarRating from 'react-native-star-rating'
 class Home extends Component {
+
+    static navigationOptions = {
+        header: null
+    }
     render() {
         return (
-            <TouchableOpacity onPress={() => this.props.navigation.navigate('Detail')}>
+            <TouchableOpacity onPress={() => this.props.navigation.navigate('Detail') }>
                 <View style={{ width: this.props.width / 2 - 30, height: this.props.width / 2 - 30, borderWidth: 0.5, borderColor: '#dddddd' }}>
                     <View style={{ flex: 1 }}>
                         <Image
