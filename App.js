@@ -1,14 +1,35 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
 
-import { createBottomTabNavigator } from 'react-navigation'
-import Icon from 'react-native-vector-icons/Ionicons'
-import Explore from './screens/Explore'
+//import { createBottomTabNavigator } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation';
+import Icon from 'react-native-vector-icons/Ionicons';
+import Explore from './screens/Explore';
+import Detail from './screens/Detail';
 /*import Saved from './screens/Saved'
 import Inbox from './screens/Inbox'
 import Trips from './screens/Trips'*/
 
 
+export default class App extends React.Component {
+  render() {
+    return (
+      <AppStackNavigator />
+    );
+  }
+}
+
+
+const AppStackNavigator =  createStackNavigator({
+  Explore: {
+    screen: Explore
+  },
+  Detail: {
+    screen: Detail
+  }
+
+})
+/*
 export default createBottomTabNavigator({
   Explore: {
     screen: Explore,
@@ -19,7 +40,7 @@ export default createBottomTabNavigator({
       )
     }
   },
-  /*Saved: {
+  Saved: {
     screen: Saved,
     navigationOptions: {
       tabBarLabel: 'SAVED',
@@ -54,7 +75,7 @@ export default createBottomTabNavigator({
         <Icon name="ios-person-outline" color={tintColor} size={24} />
       )
     }
-  }*/
+  }
 }, {
     tabBarOptions: {
       activeTintColor: 'red',
@@ -68,7 +89,7 @@ export default createBottomTabNavigator({
         elevation: 5
       }
     }
-  })
+  })*/
 
 const styles = StyleSheet.create({
   container: {
