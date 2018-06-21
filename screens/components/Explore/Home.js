@@ -9,9 +9,7 @@ import {
 import StarRating from 'react-native-star-rating'
 class Home extends Component {
 
-    static navigationOptions = {
-        header: null
-    }
+    
     render() {
         return (
             
