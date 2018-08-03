@@ -9,7 +9,9 @@ import {
     StatusBar,
     ScrollView,
     Image,
-    Dimensions
+    Dimensions,
+    Button,
+    Linking
 } from "react-native";
 import Icon from 'react-native-vector-icons/Ionicons'
 import Category from './components/Explore/Category'
@@ -25,13 +27,13 @@ class Detail extends Component {
     }
 
     render() {
-        return (
+        const { state } = this.props.navigation;
 
+        return (
+            
             <View style={{ flex: 1 }}>
                 
-                <ScrollView
-                    scrollEventThrottle={16}
-                >
+                <ScrollView>
                     <View style={{ flex: 1, backgroundColor: 'white', paddingTop: 0 }}>
                         
                         <View style={{ marginTop: 0, paddingHorizontal: 20 }}>
@@ -39,16 +41,31 @@ class Detail extends Component {
                             <View style={{ width: width - 40, height: 200, marginTop: 20 }}>
                                 <Image
                                     style={{ flex: 1, height: null, width: null, resizeMode: 'cover', borderRadius: 5, borderWidth: 1, borderColor: '#dddddd' }}
-                                    source={require('../assets/bigbanner1.jpg')}
+                                    source={{uri: state.params.image }}
                                 />
 
                             </View>
                         </View>
 
                         <View style={{ marginTop: 40 }}>
+
+                            <Button title="Add to Cart" style={{ paddingTop: 20, paddingBottom: 20 }} onPress={() => Linking.openURL('http://www.huboffruit.com/index.php?route=product/product&product_id=' + state.params.product_id)}/>
+
+
+
                             <Text style={{ fontSize: 24, fontWeight: '700', paddingHorizontal: 20 }}>
-                                ข้อมูลสินค้า
+                                {state.params.name}
                             </Text>
+
+                            <Text style={{ fontSize: 24, fontWeight: '20', paddingHorizontal: 20 }}>
+                                {state.params.description}
+                            </Text>
+
+                            <Text style={{ fontSize: 24, fontWeight: '20', paddingHorizontal: 20 }}>
+                                PRICE {state.params.price}
+                            </Text>
+
+                            
                             
                         </View>
 

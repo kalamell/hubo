@@ -17,7 +17,7 @@ class Home extends Component {
                     <View style={{ flex: 1 }}>
                         <Image
                             style={{ flex: 1, width: null, height: null, resizeMode: 'cover' }}
-                            source={require('../../../assets/fruit5.jpg')} />
+                            source={{uri:this.props.image}} />
                     </View>
                     <View style={{ flex: 1, alignItems: 'flex-start', justifyContent: 'space-evenly', paddingLeft: 10 }}>
                         <Text style={{ fontSize: 10, color: '#b63838' }}>{this.props.type}</Text>
